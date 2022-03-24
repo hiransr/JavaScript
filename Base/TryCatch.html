@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <p>Enter Some number between 10-20:</p>
+    <input id="demo" type="text">
+    <button type="button" onclick="tryFunction()">Check Input</button>
+    <p id="demo2"></p>
+    <script>
+        function tryFunction(){
+            const message = document.getElementById("demo2");
+            let x = document.getElementById("demo").value;
+            //message.innerHTML = "";
+            try{
+                if(x=="") throw " empty";
+                if(isNaN(x)) throw " Not a Number";
+                x=Number(x);
+                if(x>20) throw " very huge";
+                if(x<10) throw " too small";
+            }
+            catch(err){
+                message.innerHTML = "Input is"+err;
+            }
+        }
+    </script>
+</body>
+</html>

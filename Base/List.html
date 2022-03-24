@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h2>List of Car Companies</h2>
+    <p id="Demo"></p>
+    <script>
+        let car = ["BMW", "Volvo", "Skoda", "Toyota"];
+        let text = "<ul>";
+        for (let i = 0; i < car.length; i++) {
+            text += '<li>' + car[i] + '</li>';
+        }
+        text += '</ul>';
+        document.getElementById("Demo").innerHTML = text;
+    </script>
+
+</body>
+
+</html>

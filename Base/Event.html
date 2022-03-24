@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2>JavaScript ArraySort</h2>
+    <button onclick="ArrFun()">Input</button>
+    <button onclick="Function1()">Sort by Alphabet</button>
+    <button onclick="Function2()">Sort Numerically</button>
+    <p id="Demo"></p>
+    <script>
+        let arr=[10,30,25,90,67,45,2];
+        //const arr1=arr.slice();
+        const arr1=[...arr];
+        function ArrFun(){
+            document.getElementById("Demo").innerHTML=arr1;
+        }
+        function Function1(){
+            document.getElementById("Demo").innerHTML=arr.sort();
+        }
+        function Function2(){
+            document.getElementById("Demo").innerHTML=arr.sort(function(a,b){ return a-b;})
+        }
+    </script>
+</body>
+</html>
