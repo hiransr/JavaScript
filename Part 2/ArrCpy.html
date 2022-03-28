@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        const A=["abc","def","ghi"];
+        const B=A;
+        B[1]="xyz";
+        document.write("<b>Call by Value</b> <br>");
+        document.write(A,"<br>",B,"<br>");
+        const C=A.slice();
+        C[1]="def";
+        document.write("<b>Call by Refference</b> <br>");
+        document.write(A,"<br>",C);
+    </script>
+</body>
+</html>
