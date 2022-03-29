@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const obj={
+            names: "Laxury Cars",
+            modelYear: 2022,
+            cars:[
+                {brand: "BMW",Models:["X4","720","X5","GT"]},
+                {brand: "Volvo",Models:["XC40","S60","S90"]},
+                {brand: "Benz",Models:["GLA","C-Class","GLC"]}
+            ]
+        };
+        let text="";
+        for(let i in obj.cars){
+            text+="<h1>"+obj.cars[i].brand+"</h1>";
+            for(let j in obj.cars[i].Models){
+                text+="<br>"+obj.cars[i].Models[j];  
+            }
+        }
+        document.getElementById("demo").innerHTML=text;
+    </script>
+</body>
+</html>
