@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!--<p id="demo2"></p>-->
+    <p id="demo" >Calculating....</p>
+    <script>
+        setTimeout(()=>display(5,90),3000); //arrow function call back ()=>functionname(parameters)
+        let display=(x,y)=>{
+            let sum = x+y;    
+            document.getElementById("demo").innerHTML="Sum is "+sum;
+        }
+    </script>
+</body>
+</html>
