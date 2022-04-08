@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charSet="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,32 +10,72 @@
 
 <body>
     <form name="form1">
-        <h1>Calculator</h1>
-        <input id="calc" type="text" name="answer"> <br> <br>
-        <input type="button" value="1" onClick="answer.value+='1'">
-        <input type="button" value="2" onClick="answer.value+='2'">
-        <input type="button" value="3" onClick="answer.value+='3'">
-        <input type="button" value="/" onClick="answer.value+='/'">
+        <h1>Simple Calculator in js</h1>
+        <!--input id="calc" type="text" onChange="answer.value = putComma()" name="answer"> <br> <br>-->
+        <input id="calc" type="text" onkeypress="answer.value= addText()" name="answer"> <br> <br>
+        <input type="button" value="1" onClick="answer.value = Set('1')">
+        <input type="button" value="2" onClick="answer.value = Set('2')">
+        <input type="button" value="3" onClick="answer.value = Set('3')">
+        <input type="button" value="/" onClick="answer.value = Set('/')">
         <br>
-        <input type="button" value="4" onClick="answer.value+='4'">
-        <input type="button" value="5" onClick="answer.value+='5'">
-        <input type="button" value="6" onClick="answer.value+='6'">
-        <input type="button" value="*" onClick="answer.value+='*'">
+        <input type="button" value="4" onClick="answer.value = Set('4')">
+        <input type="button" value="5" onClick="answer.value = Set('5')">
+        <input type="button" value="6" onClick="answer.value = Set('6')">
+        <input type="button" value="*" onClick="answer.value = Set('*')">
         <br>
-        <input type="button" value="7" onClick="answer.value+='7'">
-        <input type="button" value="8" onClick="answer.value+='8'">
-        <input type="button" value="9" onClick="answer.value+='9'">
-        <input type="button" value="-" onClick="answer.value+='-'">
+        <input type="button" value="7" onClick="answer.value = Set('7')">
+        <input type="button" value="8" onClick="answer.value = Set('8')">
+        <input type="button" value="9" onClick="answer.value = Set('9')">
+        <input type="button" value="-" onClick="answer.value = Set('-')">
         <br>
-        <input type="button" value="%" onClick="answer.value+='%'">
-        <input type="button" value="0" onClick="answer.value+='0'">
-        <input type="button" value="+" onClick="answer.value+='+'">
-        <input type = "button" value = "=" onClick = "answer.value = eval(answer.value) ">
+        <input type="button" value="%" onClick="answer.value = Set('%')">
+        <input type="button" value="0" onClick="answer.value = Set('0')">
+        <input type="button" value="+" onClick="answer.value = Set('+')">
+        <input type="button" value="=" onClick="answer.value = Calculate() ">
         <br><br>
-        <input type="button"  value="Clear All" onClick = "answer.value = ''">
-        
-    </form>
+        <input type="button" value="Clear All" onClick="answer.value = Clear()">
+        <script>
+            var arr, str = '', exp = '', str2 = '', i = '';
+            function Clear() {
+                str = '';
+                str2 = '';
+                n = 0;
+                exp = '';
+                return '';
+            }
+            function Calculate() {
+                if (exp == '') {
+                    //exp += parseFloat(exp.replace(/,/g, ''));
+                    i = document.getElementById("calc").value;
+                    if (1) {
+                        str2 = eval(i);
+                        return str2.toLocaleString('en-US');
+                    }
+                } else {
+                    str2 = eval(exp);
+                    return str2.toLocaleString('en-US');
+                }
 
+            }
+            function Set(x) {
+                exp += x;
+                if (isNaN(x) == false) {
+                    str += x;
+                    n = Number(str);
+                    str2 = n.toLocaleString('en-US');
+                    return str2;
+                } else if (isNaN(x)) {
+                    str = '';
+                    str2 += x;
+                    return str2;
+                }
+            }
+            function addText() {
+                i = document.getElementById("calc").value;
+                return i;
+            }
+        </script>
+    </form>
 </body>
 
 </html>
